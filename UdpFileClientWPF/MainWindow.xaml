@@ -1,0 +1,12 @@
+﻿<Window x:Class="UdpFileClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UDP File Transfer" Height="200" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBox Name="FilePathTextBox" Margin="0,0,0,10" Width="300"/>
+            <Button Content="Отправить файл" Click="SendFileButton_Click" Margin="0,0,0,10"/>
+            <TextBlock Name="StatusTextBlock"/>
+        </StackPanel>
+    </Grid>
+</Window>
