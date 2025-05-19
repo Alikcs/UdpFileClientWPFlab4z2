@@ -54,12 +54,26 @@ namespace UdpFileClientWPF
                 byte[] endSignal = Encoding.UTF8.GetBytes("END");
                 await udpClient.SendAsync(endSignal, endSignal.Length, serverEndpoint);
                 StatusTextBlock.Text = "Передача завершена";
+
+                // После завершения передачи показываем диалог "Открыть файл?"
+                var result = MessageBox.Show("Открыть файл?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    // Открываем файл
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = filePath,
+                        UseShellExecute = true
+                    });
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
+
+
 
     }
 }

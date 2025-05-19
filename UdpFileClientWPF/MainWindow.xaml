@@ -5,7 +5,7 @@
     <Grid Margin="10">
         <StackPanel>
             <TextBox Name="FilePathTextBox" Margin="0,0,0,10" Width="300"/>
-            <Button Content="Отправить файл" Click="SendFileButton_Click" Margin="0,0,0,10"/>
+            <Button Content="Открыть файл" Click="SendFileButton_Click" Margin="0,0,0,10"/>
             <TextBlock Name="StatusTextBlock"/>
         </StackPanel>
     </Grid>
